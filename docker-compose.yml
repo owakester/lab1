@@ -22,10 +22,13 @@ services:
       - 8080:8080
   proxy:
    image: nginx:alpine
+   container_name: proxy
    volumes:
       - ./html/:/usr/share/nginx/html/
       - ./carloshtml/:/usr/share/nginx/carloshtml/
       - ./virtualhost/:/etc/nginx/conf.d/
+      #- ./certificados/:/etc/ssl/certs/
+      #- ./keys/:/etc/ssl/private/
    ports:
       - 80:80
   
