@@ -1,0 +1,9 @@
+- Crear index.html y montarlo en carpeta /usr/share/nginx/html/
+- Navegar http://localhost/index.html
+- Crear index.html y montarlo en carpeta /usr/share/nginx/carloshtml/
+- Crear archivo virtual host prueba.carlos.com "carlos.conf" y montar el /etc/npinx/conf.d/carlos.conf
+- navegar http://prueba.carlos.com/
+- Convertir a proxy -> http://keycloak:8080/
+- Modificar entrada de hosts prueba.carlos.com -> 127.0.0.1
+- Crear certificado self signed y configurar
+- Navegar https://prueba.carlos.com/
