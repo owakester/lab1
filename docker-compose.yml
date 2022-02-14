@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  idp:
+    image: jboss/keycloak:15.0.2
+    container_name: idp
+    restart: always
+    environment:
+      KEYCLOAK_USER: admin
+      KEYCLOAK_PASSWORD: admin
+      UMS_LOG_LEVEL: DEBUG
+      PRETUPS_LOG_LEVEL: DEBUG
+      MXSSO_LOG_LEVEL: DEBUG
+      AUTHENTICATOR_LOG_LEVEL: DEBUG
+      PROXY_ADDRESS_FORWARDING: "true"
+      #KEYCLOAK_FRONTEND_URL: http://localhost:8080/auth/
+    volumes:
+      - ./startup-scripts/:/opt/jboss/startup-scripts/
+      - ./custom-scripts/:/opt/jboss/custom-scripts/
+      - ./objects/:/opt/jboss/keycloak/objects/
+    ports:
+      - 8080:8080
+  proxy:
+   image: nginx:alpine
+   volumes:
+      - ./html/:/usr/share/nginx/html/
+      - ./virtualhost/:/etc/nginx/conf.d/
+    
+   ports:
+      - 80:80
+  
