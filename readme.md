@@ -1,3 +1,5 @@
+Nginx proxy con Keycloak
+
 - Crear index.html y montarlo en carpeta /usr/share/nginx/html/
 - Navegar http://localhost/index.html
 - Crear index.html y montarlo en carpeta /usr/share/nginx/carloshtml/
