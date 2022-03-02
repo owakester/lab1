@@ -19,7 +19,6 @@ services:
       - ./custom-scripts/:/opt/jboss/custom-scripts/
       - ./objects/:/opt/jboss/keycloak/objects/
       - ./data/keycloak.mv.db:/opt/jboss/keycloak/standalone/data/keycloak.mv.db
-     
     ports:
       - 8080:8080
   proxy:
